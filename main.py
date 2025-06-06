@@ -2,6 +2,7 @@
 from selenium import webdriver
 from selenium.webdriver.support.wait import WebDriverWait
 from pages import LoginPage
+import time
 import data
 
 from data import LOGIN_URL, USERNAME, PASSWORD
@@ -24,13 +25,24 @@ class TestLoginPage:
         login_page.enter_username(username)
         login_page.enter_password(password)
         login_page.click_submit()
+        time.sleep(2)
+
+# Verify new page URL contains "practicetestautomation.com/logged-in-successfully/"
 
         new_url = "practicetestautomation.com/logged-in-successfully/"
-        get_url = self.driver.current_url
-        assert new_url in get_url
-        # need to Verify new page contains
-        # expected text ('Congratulations' or 'successfully logged in')
-        # need to Verify button Log out is displayed on the new page
+        assert new_url in self.driver.current_url, "Page address is invalid!"
+
+# Verify new page contains expected text ('Congratulations' or 'successfully logged in')
+
+        page_source = self.driver.page_source
+        strings_to_check = ["Congratulations", "successfully logged in"]
+        for string in strings_to_check:
+            assert string in page_source , "Page does not contain correct messages."
+
+#Verify button Log out is displayed on the new page
+
+        assert login_page.get_logout_button(), "Logout button not displayed."
+
 
 
     @classmethod
