@@ -1,9 +1,7 @@
-#imports
 from selenium import webdriver
 from pages import LoginPage
 import time
 from data import LOGIN_URL, USERNAME_VALID, PASSWORD_VALID, USERNAME_INVALID, PASSWORD_INVALID
-
 
 #test class
 class TestLoginPage:
