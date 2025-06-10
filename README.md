@@ -1,5 +1,5 @@
 # PracticeTestAutomation
-Test script utilizing simple positive and negative testing in Selenium using Python.
+Test script for the Login page of practicetestautomation.com demonstrating simple positive and negative testing in Selenium using Python.
 
 Test case 1: Positive LogIn test
 1. Open page
