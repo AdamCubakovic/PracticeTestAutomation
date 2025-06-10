@@ -1,3 +1,5 @@
 LOGIN_URL = "https://practicetestautomation.com/practice-test-login/"
-USERNAME = "student"
-PASSWORD = "Password123"
+USERNAME_VALID = "student"
+USERNAME_INVALID = "incorrectUser"
+PASSWORD_VALID = "Password123"
+PASSWORD_INVALID = "incorrectPassword"
